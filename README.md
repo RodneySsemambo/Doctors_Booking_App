@@ -49,7 +49,7 @@ A production-ready healthcare booking platform built with Laravel 11. Patients c
 - Doctor verification and management
 - Payment monitoring and withdrawal approvals
 - Platform wallet management
-- Chatbot analytics
+
 
 ---
 
@@ -139,9 +139,9 @@ Visit `http://localhost:8000`
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@example.com | password |
-| Doctor | doctor@example.com | password |
-| Patient | patient@example.com | password |
+| Admin | ssemamborodney94@gmail.com | admin123 |
+| Doctor | khintz@example.net | admin123 |
+| Patient | ophelia.corwin@example.com | admin123 |
 
 ---
 
