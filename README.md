@@ -12,6 +12,13 @@ A production-ready healthcare booking platform built with Laravel 11. Patients c
 <img width="1366" height="768" alt="Doctor Dashboard -1" src="https://github.com/user-attachments/assets/3cca37bb-c5f2-464c-9fd5-c0f1f76a0e3a" />
 
 
+### Patient AI Chatbot
+<img width="1366" height="768" alt="Doctor Dashboard - 2" src="https://github.com/user-attachments/assets/a7a9f702-9abd-464f-b8c8-d54b26915a96" />
+
+
+### Patient AI Chatbot
+<img width="1366" height="768" alt="Doctor Dashboard - Doctors_Booking_App - Google Chrome 01_03_2026 17_08_57" src="https://github.com/user-attachments/assets/26de626c-45bd-4afc-8c35-1df357ad1d93" />
+
 
 ##Patient Book Appointment Steps
 <img width="1366" height="768" alt="Doctor Dashboard - Doctors_Booking_App - Google Chrome 01_03_2026 17_09_22" src="https://github.com/user-attachments/assets/de65ab12-fad0-48b0-a96b-54a4e3650e7e" />
@@ -37,13 +44,6 @@ A production-ready healthcare booking platform built with Laravel 11. Patients c
 ## Patient Recent Payments
 <img width="1366" height="768" alt="Doctor Dashboard - Doctors_Booking_App - Google Chrome 01_03_2026 17_28_30" src="https://github.com/user-attachments/assets/6200a394-9b8d-4a92-820c-840d684714d2" />
 
-
-### Patient AI Chatbot
-<img width="1366" height="768" alt="Doctor Dashboard - 2" src="https://github.com/user-attachments/assets/a7a9f702-9abd-464f-b8c8-d54b26915a96" />
-
-
-### Patient AI Chatbot
-<img width="1366" height="768" alt="Doctor Dashboard - Doctors_Booking_App - Google Chrome 01_03_2026 17_08_57" src="https://github.com/user-attachments/assets/26de626c-45bd-4afc-8c35-1df357ad1d93" />
 
 
 ### Patient Panel Payment Flow
