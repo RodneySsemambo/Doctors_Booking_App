@@ -1,0 +1,73 @@
+
+
+services:
+
+  # ── Laravel App ────────────────────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: doctors_app
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    volumes:
+      - .:/var/www
+      - /var/www/vendor        # don't override vendor from host
+      - /var/www/node_modules  # don't override node_modules from host
+      - /var/www/public/build  # for Vite's hot module replacement
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - doctors_network
+
+  # ── MySQL Database ─────────────────────────────────────────────────────────
+  db:
+    image: mysql:8.0
+    container_name: doctors_db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"   # 3307 on host so it doesn't clash with Laragon's MySQL
+    environment:
+      MYSQL_DATABASE: doctors_booking
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: doctors_user
+      MYSQL_PASSWORD: secret
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-psecret"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 120s
+    networks:
+      - doctors_network
+
+  # ── phpMyAdmin (optional — handy for local dev) ───────────────────────────
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: doctors_phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: secret
+    depends_on:
+      - db
+    networks:
+      - doctors_network
+
+networks:
+  doctors_network:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local

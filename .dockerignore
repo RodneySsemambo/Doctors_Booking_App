@@ -1,0 +1,39 @@
+# Dependencies (installed fresh in container)
+vendor/
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Tests (not needed in production image)
+tests/
+phpunit.xml
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+public/hot
+public/storage
+storage/logs/*.log
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+
