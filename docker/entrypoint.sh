@@ -44,5 +44,8 @@ php artisan view:cache
 
 echo "🎉 Ready! Starting nginx + php-fpm..."
 
+# Fix Nginx port for Railway (Railway assigns a random $PORT)
+sed -i "s/listen 80;/listen ${PORT:-80};/" /etc/nginx/sites-available/default
+
 # Start supervisor (runs both nginx and php-fpm)
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
