@@ -1,35 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - HealthCare</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-    <style>
-        [x-cloak] { display: none !important; }
-        
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-    </style>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50 relative overflow-hidden">
     
@@ -89,7 +64,7 @@
                         </div>
                         <input type="email" name="email" id="email" value="{{ old('email') }}"
                                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 outline-none"
-                               placeholder="you@example.com" required>
+                               placeholder="you@example.com">
                     </div>
                 </div>
 
@@ -103,14 +78,14 @@
                         </div>
                         <input :type="showPassword ? 'text' : 'password'" name="password" id="password"
                                class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 outline-none"
-                               placeholder="Enter your password" required>
+                               placeholder="Enter your password">
                         <button type="button" @click="showPassword = !showPassword"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none transition">
                             <svg x-show="!showPassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
-                            <svg x-show="showPassword" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg x-show="showPassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a10.05 10.05 0 012.253-3.326M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3l18 18" />
                             </svg>
@@ -118,12 +93,12 @@
                     </div>
                 </div>
 
-               <div class="flex items-center justify-between text-sm pt-1">
-    <label class="inline-flex items-center cursor-pointer group">
-        <input type="checkbox" name="remember" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
-        <span class="ml-2 text-gray-600 group-hover:text-gray-800 transition">Remember me</span>
-    </label>
-</div>
+                <div class="flex items-center justify-between text-sm pt-1">
+                    <label class="inline-flex items-center cursor-pointer group">
+                        <input type="checkbox" name="remember" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer">
+                        <span class="ml-2 text-gray-600 group-hover:text-gray-800 transition">Remember me</span>
+                    </label>
+                </div>
 
                 <button type="submit"
                         class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3.5 px-4 rounded-xl hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 mt-6">
@@ -131,27 +106,36 @@
                 </button>
             </form>
 
-            <!-- Role Information -->
             <div class="mt-8 pt-6 border-t border-gray-200">
                 <p class="text-center text-gray-600 text-sm">
-                    Incase you forgot your password, you can contact the admin or manager or any responsible personnel to reset your password for you.
+                    Incase you forgot your password, you can contact the admin or manager or any responsible personalae to reset your password for you.
                 </p>
-                
-                <div class="mt-4 text-center text-xs text-gray-500">
-                    <p>Demo Accounts:</p>
-                    <p class="mt-1">Patient: patient@example.com / password</p>
-                    <p>Doctor: doctor@example.com / password</p>
-                    <p>Admin: admin@example.com / password</p>
-                </div>
             </div>
         </div>
 
         <!-- Footer text -->
         <p class="text-center text-gray-500 text-xs mt-6">
-            © {{ date('Y') }} HealthCare. All rights reserved.
+            © 2024 HealthCare. All rights reserved.
         </p>
     </div>
 
-    @livewireScripts
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+
 </body>
 </html>
