@@ -22,11 +22,15 @@ echo "✅ Database connected."
 echo "🗄️  Running migrations..."
 php artisan migrate --force
 
-# Seed only if DB is empty (safe for production)
-PATIENT_COUNT=$(php artisan tinker --execute="echo \App\Models\User::count();" 2>/dev/null || echo "0")
-if [ "$PATIENT_COUNT" = "0" ]; then
+# Seed only if DB is empty
+echo "🌱 Checking if seeding needed..."
+USER_COUNT=$(php artisan tinker --execute="echo App\Models\User::count();" 2>/dev/null | tail -1 | tr -d '[:space:]')
+echo "👥 User count: $USER_COUNT"
+if [ "$USER_COUNT" = "0" ] || [ -z "$USER_COUNT" ]; then
     echo "🌱 Seeding database..."
     php artisan db:seed --force
+else
+    echo "✅ Database already seeded ($USER_COUNT users found)"
 fi
 
 # 🔥 FIX: Change OWNERSHIP before changing permissions
