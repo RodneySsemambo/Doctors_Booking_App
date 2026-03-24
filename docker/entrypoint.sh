@@ -25,6 +25,7 @@ php artisan migrate --force
 # Seed database
 echo "🌱 Seeding database..."
 php artisan db:seed --force
+echo "🔌 Nginx configured to port: $(grep 'listen' /etc/nginx/sites-available/default | head -1)"
 echo "✅ Seeding complete."
 
 # 🔥 FIX: Change OWNERSHIP before changing permissions
