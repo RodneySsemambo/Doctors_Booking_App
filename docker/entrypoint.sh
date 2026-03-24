@@ -48,3 +48,6 @@ sed -i "s/listen 80;/listen ${PORT:-80};/" /etc/nginx/sites-available/default
 
 # Start supervisor (runs both nginx and php-fpm)
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+
+echo "🔌 Nginx configured to port:     listen 80;"
+echo "🌍 Railway PORT variable: ${PORT}"
